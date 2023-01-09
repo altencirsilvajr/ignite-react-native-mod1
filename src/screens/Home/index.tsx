@@ -10,11 +10,11 @@ export function Home(){
 
   function handleParticipantAdd (){
 
-    console.log("Participante adicionado");
+    alert("Participante adicionado: ");
   }
 
   function handleParticipantRemove(name: string){
-    console.log(`Participante removido: ${name}` );
+    alert(`Participante removido: ${name}` );
   }
   
   return(
