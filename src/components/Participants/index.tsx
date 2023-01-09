@@ -1,15 +1,19 @@
 import { Text,View, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 
-export function Participants(){
+type Props = {
+	name: string;
+}
+
+export function Participants({name}: Props){
     return(
         <View style = {styles.container}>
             <Text style ={styles.name}>
-                Lais Mello
+              {name}
             </Text>
 
             <TouchableOpacity 
-            style={styles.button}>
+            style={styles.button} >
               <Text style={styles.buttonText}>
               -
             </Text>

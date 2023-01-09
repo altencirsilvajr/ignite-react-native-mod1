@@ -33,8 +33,10 @@ export function Home(){
 
         </View>
 
-        <Participants/>
-        <Participants/>
+        <Participants name = "Laís "/>
+        <Participants name = "Allan "/>
+        <Participants name = "Lucilene "/>
+        <Participants name = " Altencir "/>
 
         
     </View>
