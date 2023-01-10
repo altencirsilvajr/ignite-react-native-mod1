@@ -6,7 +6,10 @@ import { Participants } from "../../components/Participants";
 
 export function Home(){
 
-  const participants = ['Láis', 'Allan', 'Gabriel', 'Stephanie', 'Altencir', 'Lucilene', 'Acer', 'Lenovo','Dell'];
+  const participants = 
+    ['Láis', 'Allan', 'Gabriel', 'Stephanie', 'Altencir', 'Lucilene', 'Acer', 'Lenovo','Dell'];
+
+  
 
   function handleParticipantAdd (){
 
