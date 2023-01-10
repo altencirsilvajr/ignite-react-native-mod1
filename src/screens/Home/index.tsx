@@ -49,6 +49,7 @@ export function Home(){
 
 
         <FlatList 
+        
           showsVerticalScrollIndicator ={false}
           data={participants}
           keyExtractor={item => item}
@@ -58,6 +59,11 @@ export function Home(){
                 name = {item} 
                 onRemove ={()=> handleParticipantRemove(`${item}`)}/>
           )}
+        ListEmptyComponent={() => (
+          <Text style ={styles.listEmpty}>
+            Nenhum participante adicionado ao evento!!!
+          </Text>
+        )}  
         />
     </View>
   );
