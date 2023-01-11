@@ -4,14 +4,15 @@ import { styles } from "./styles";
 
 import { Participants } from "../../components/Participants";
 
-export function Home(){
+export function Home() {
 
   const participants = 
     ['Láis', 'Allan', 'Gabriel', 'Stephanie', 'Altencir', 'Lucilene', 'Acer', 'Lenovo','Dell'];
 
 
     function handleParticipantAdd() {
-      if (participants.includes('Laís')) {
+      
+      if (participants.includes('Stephanie')) {
         return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
       }
     }
@@ -39,7 +40,7 @@ export function Home(){
         </Text>
 
         <Text style={styles.eventDate}>
-          (27 de Janeiro de 2023)
+          27 de Janeiro de 2023.
         </Text>
 
         <View style={styles.form}>
@@ -51,7 +52,8 @@ export function Home(){
           />
           
           <TouchableOpacity 
-            style={styles.button} onPress={handleParticipantAdd}>
+            style={styles.button} 
+            onPress={handleParticipantAdd}>
               <Text style={styles.buttonText}>
               +
             </Text>
