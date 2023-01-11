@@ -7,16 +7,17 @@ import { styles } from "./styles";
 import { Participants } from "../../components/Participants";
 
 export function Home() {
-  const [participants , setParticipants] = useState(['Altencir']);
+  const [participants , setParticipants] = useState <String[]> ([]);
+  const [participantName , setParticipantName] = useState('');
 
     function handleParticipantAdd() {
       
-      if (participants.includes(`Rodrigo`)) {
+      if (participants.includes(participantName)) {
         return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
       }
       
-      setParticipants( prevState => [...prevState ,'Lucilene']);
-    
+      setParticipants( prevState => [...prevState ,participantName]);
+      setParticipantName ('');
     
     }
     
@@ -52,6 +53,8 @@ export function Home() {
             style={styles.input}
             placeholder = "Nome do participante"
             placeholderTextColor= "#6B6B6B"
+            onChangeText={setParticipantName}
+            value ={participantName}
           />
           
           <TouchableOpacity 
