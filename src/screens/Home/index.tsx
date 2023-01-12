@@ -7,36 +7,35 @@ import { styles } from "./styles";
 import { Participants } from "../../components/Participants";
 
 export function Home() {
-  const [participants , setParticipants] = useState <String[]> ([]);
   const [participantName , setParticipantName] = useState('');
+  const [participants , setParticipants] = useState <String[]> ([]);
 
     function handleParticipantAdd() {
       
       if (participants.includes(participantName)) {
         return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
       }
-      
-      setParticipants( prevState => [...prevState ,participantName]);
+
+      setParticipants( previewState => [...previewState ,participantName]);
       setParticipantName ('');
     
     }
     
 
   function handleParticipantRemove(name: string) {
-    Alert.alert("Remover",`Deseja realmente remover: ${name}?`,[
+    Alert.alert("Remover",`Deseja realmente remover: ${name}?`,
+    [
       {
-        text: "Sim",
-        onPress: () => Alert.alert(`O participante ${name} foi excluído`) 
+        text: "SIM",
+        onPress: () => setParticipants(previewState => previewState.filter(participants => participants !== name))
       },
       {
-        text:"Não",
+        text:"NÃO",
         style: "cancel"
       }
     ])
 
-
   }
-  
   return(
     <View style={styles.container}>
         <Text style={styles.eventTitle}>
@@ -68,9 +67,8 @@ export function Home() {
         </View>
 
 
-        <FlatList 
-        
-          showsVerticalScrollIndicator ={false}
+        <FlatList showsVerticalScrollIndicator ={false}
+         
           data={participants}
           keyExtractor={item => item}
           renderItem={({ item }) => (
